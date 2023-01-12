@@ -40,6 +40,20 @@ $videotheque = array(
 echo '12.Mes films : <br>';
 //ajoutez votre code ici
 
+foreach ($videotheque as $movies) {
+    foreach ($movies as $keys => $info){
+        if (is_array($info)){
+            echo "acteurs : ";
+            foreach ($info as $actors){
+                echo $actors . " ";
+            }
+            echo "<br><br>";
+        }else{
+            echo $keys . " : " . $info . "<br>";
+        }
+    }
+}
+
 
 //----------------------------------------
 //Afficher toutes les informations de la vidéothèque
@@ -49,4 +63,43 @@ echo '12.Mes films : <br>';
 
 echo '13.Mes films : <br>';
 //ajoutez votre code ici
+$videotheque = array(
+    array(
+        'nom' => 'Interstellar',
+        'date' => 2014,
+        'realisateur' => 'Christopher Nolan',
+        'acteurs' => array(
+            'Matthew McConaughey', 'John Lithgow', 'Anne Hathaway', 'Jessica Chastain',
+        ),
+    ),
+    array(
+        'nom' => 'Shutter Island',
+        'date' => 2010,
+        'realisateur' => 'Martin Scorsese',
+        'acteurs' => array(
+            'Leonardo DiCaprio', 'Mark Ruffalo', 'Ben Kingsley',
+        ),
+    ),
+    array(
+        'nom' => 'Mommy',
+        'date' => 2014,
+        'realisateur' => 'Xavier Dolan',
+        'acteurs' => array(
+            'Anne Dorval', 'Antoine Olivier Pilon', 'Suzanne Clément',
+        ),
+    ),
+);
 
+foreach ($videotheque as $movies) {
+    foreach ($movies as $keys => $info){
+        if (is_array($info)){
+            echo "acteurs : ";
+            foreach ($info as $actors){
+                echo $actors . " ";
+            }
+            echo "<br><br>";
+        }else{
+            echo $keys . " : " . $info . "<br>";
+        }
+    }
+}
